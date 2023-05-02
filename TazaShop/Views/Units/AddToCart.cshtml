@@ -1,0 +1,136 @@
+﻿@*@model IEnumerable<TazaShop.Models.Unit>
+
+@{
+    ViewData["Title"] = "AddToCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <form asp-action="ChangeCart">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        Size
+                    </th>
+                    <th>
+                        Qty
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Collection)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            <input type="hidden" name="unitId" value="3">
+                            <input type="number" name="productSize" value="40" min="40" max="43">
+                        </td>
+                        <td>
+                            <input type="number" name="qty" class="qchange" value="1" min="0" max="2" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Collection)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="form-group">
+            <a asp-action="Index" class="btn btn-info">Back To Shopping</a>
+            <button type="submit" value="Go To Payment" class="btn btn-primary">Go To Payment</button>
+        </div>
+
+    </form>
+
+</div>*@
+
+
+@model dynamic
+
+@{
+    ViewData["Title"] = "AddToCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" >
+    <form asp-action="ChangeCart">
+        <table class="table" id="cart_cont">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Size
+                    </th>
+                    <th>
+                        Qty
+                    </th>
+                    <th>
+                        Collection
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Units)
+                {
+                    <tr>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.Price
+                        </td>
+                        <td>
+                            <input type="hidden" name="unitId" value="3">
+                            <input type="number" name="productSize" value="40" min="40" max="41">
+                        </td>
+                        <td>
+                            <input type="number" name="qty" class="qchange" value="1" min="0" max="2"/>
+                        </td>
+                        <td>
+                            @item.Collection
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="form-group">
+            <a asp-action="Index" class="btn btn-info">Back To Shopping</a>
+            <button type="submit" value="Go To Payment" class="btn btn-primary">Go To Payment</button>
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,70 @@
+﻿@model dynamic
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" id="div_details">
+            <h4>@Model.Units.Kind.Product</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-3">
+                    Model: 
+                </dt>
+                <dd class="col-sm-9">
+                    @Model.Units.Name
+                </dd>
+                
+                <dt class="col-sm-3">
+                    Price:
+                </dt>
+                <dd class="col-sm-9">
+                    @Model.Units.Price$
+                </dd>
+                <dt class="col-sm-3">
+                    Size:
+                </dt>
+                <dd class="col-sm-9">
+                    @foreach (Size size in Model.Sizes)
+                    {
+                        <a>@size.ProductSize</a>
+                    }
+                </dd>
+                <dt class="col-sm-3">
+                    Collection:
+                </dt>
+                <dd class="col-sm-9">
+                    @Model.Units.Collection
+                </dd>
+                <dt class="col-sm-3">
+                    Description: 
+                </dt>
+                <dd class="col-sm-9">
+                    @Model.Units.Description
+                </dd>
+            </dl>
+                
+            <div style="text-align:center;">
+                <a asp-action="AddToCart" class="btn" asp-route-id="@Model.Units.Id">Add To Cart</a>
+            </div>
+        </div>
+
+
+        <div class="col-md-5" style="text-align:center;">
+            <img class=" w-75" id="det_img" src="@ViewBag.Images[0].ImagePath" alt="title">
+        </div>
+
+        <div class="col-md-3">
+            @{
+                for (int i = 0; i < ViewBag.Images.Count; i++)
+                {
+                    <img class="unit-img d-block w-50" id="det_img" src="@ViewBag.Images[i].ImagePath" alt="title">
+                }
+            }
+        </div>
+
+    </div>
+</div>

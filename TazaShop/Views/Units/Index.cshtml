@@ -1,0 +1,29 @@
+﻿@model IEnumerable<TazaShop.Models.Unit>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="@item.Img" alt="picture" width="200" class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:maroon;text-align:center;">@item.Name </h5>
+                        <span style="color:black;">Price: @item.Price$</span>
+                        <div style="margin-top:7px;">
+                            <a id="unit_details"  asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </div>
+</div>

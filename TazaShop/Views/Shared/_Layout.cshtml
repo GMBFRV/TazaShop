@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TazaShop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TazaShop.styles.css" asp-append-version="true" />
+</head>
+<body>
+    
+    <header class="clearfix">
+        <div id="menu_top">
+            <div id="logo_div">
+                <a class="nav-link" asp-area="" asp-controller="Units" asp-action="Index">Home</a>
+            </div>
+        </div>
+        <div id="menu_basket" >
+            <a class="nav-link" asp-area="" asp-controller="Units" asp-action="Login">Login</a>
+            <a class="nav-link" asp-area="" asp-controller="Units" asp-action="AddToCart">Cart</a>
+        </div>
+        
+        <div id="menu_categories">
+            <div class="tab">
+                <button class="tablinks" onclick="toggleCity(event, 'Women')" id="defaultOpen">Women</button>
+                <button class="tablinks" onclick="toggleCity(event, 'Men')">Men</button>
+                <button class="tablinks" onclick="toggleCity(event, 'Accessories')">Accessories</button>
+            </div>
+
+            <div id="Women" class="tabcontent">
+                <span onclick="toggleCity(event, 'Women')" class="topright">&times</span>
+                <div class="container" id="tab_content">
+                    <h3>Women</h3>
+                    <hr style="color:white">
+                    <table id="tab_table">
+                        <tr>
+                            <th>Clothes <hr> </th>
+                            <th>Shoes <hr> </th>
+                            <th>Accessories <hr> </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Hoodie" asp-controller="Units" asp-action="Display">Hoodie</a>
+                            </td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Sneakers" asp-controller="Units" asp-action="Display">Sneakers</a>
+                            </td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Bag" asp-controller="Units" asp-action="Display">Bag</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Trousers" asp-controller="Units" asp-action="Display">Trousers</a>
+                            </td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Boots" asp-controller="Units" asp-action="Display">Boots</a>
+                            </td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Socks" asp-controller="Units" asp-action="Display">Socks</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Jacket" asp-controller="Units" asp-action="Display">Jacket</a>
+                            </td>
+                            <td>
+                                <a class="nav-link" asp-route-id="High-Heeled" asp-controller="Units" asp-action="Display">High-Heeled</a>
+                            </td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Glasses" asp-controller="Units" asp-action="Display">Glasses</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="T-Shirt" asp-controller="Units" asp-action="Display">T-Shirt</a>
+                            </td>
+                            <td></td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Belt" asp-controller="Units" asp-action="Display">Belt</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Dress" asp-controller="Units" asp-action="Display">Dress</a>
+                            </td>
+                            <td></td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Scarf" asp-controller="Units" asp-action="Display">Scarf</a>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Skirt" asp-controller="Units" asp-action="Display">Skirt</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+
+            <div id="Men" class="tabcontent">
+                <span onclick="toggleCity(event, 'Men')" class="topright">&times</span>
+                <div class="container" id="tab_content">
+                    <h3>Men</h3>
+                    <table id="tab_table">
+                        <tr>
+                            <th>Clothes</th>
+                            <th>Shoes</th>
+                            <th>Accessories</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Hoodie" asp-controller="Units" asp-action="Display">Hoodie</a>
+                            </td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Sneakers" asp-controller="Units" asp-action="Display">Sneakers</a>
+                            </td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Bag" asp-controller="Units" asp-action="Display">Bag</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Trousers" asp-controller="Units" asp-action="Display">Trousers</a>
+                            </td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Boots" asp-controller="Units" asp-action="Display">Boots</a>
+                            </td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Socks" asp-controller="Units" asp-action="Display">Socks</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Jacket" asp-controller="Units" asp-action="Display">Jacket</a>
+                            </td>
+                            <td></td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Glasses" asp-controller="Units" asp-action="Display">Glasses</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="T-Shirt" asp-controller="Units" asp-action="Display">T-Shirt</a>
+                            </td>
+                            <td></td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Belt" asp-controller="Units" asp-action="Display">Belt</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a class="nav-link" asp-route-id="Scarf" asp-controller="Units" asp-action="Display">Scarf</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="Accessories" class="tabcontent">
+                <span onclick="toggleCity(event, 'Accessories')" class="topright">&times</span>
+                <div class="container" id="tab_content">
+                    <h3>Accessories</h3>
+                    <table id="tab_table">
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Bag" asp-controller="Units" asp-action="Display">Bag</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Socks" asp-controller="Units" asp-action="Display">Socks</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Glasses" asp-controller="Units" asp-action="Display">Glasses</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Belt" asp-controller="Units" asp-action="Display">Belt</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="nav-link" asp-route-id="Scarf" asp-controller="Units" asp-action="Display">Scarf</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <script>
+            function toggleCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                var prev_state_display = document.getElementById(cityName).style.display;
+
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                if (prev_state_display === "none") {
+                    document.getElementById(cityName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                } else {
+                    document.getElementById(cityName).style.display = "none";
+                    evt.currentTarget.className.replace(" active", "");
+                }
+            }
+
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+    </header>
+
+
+    
+    <div class="container" id="main_cont">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    
+    
+
+    <footer class="footerw text-muted">
+        <div class="container">
+            &copy; 2023 - TazaShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

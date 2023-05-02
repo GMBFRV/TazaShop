@@ -1,0 +1,62 @@
+﻿@model TazaShop.Models.Customer
+
+@{
+    ViewData["Title"] = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container" id="reg_cont">
+    <h4>Register New Customer</h4>
+    <hr />
+    <div class="row">
+        <div>
+            <form asp-action="Registration">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group" id="form_group1">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" id="data_input"/>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <hr />
+                <div class="form-group" id="form_group1">
+                    <label asp-for="SecondName" class="control-label"></label>
+                    <input asp-for="SecondName" class="form-control" id="data_input" />
+                    <span asp-validation-for="SecondName" class="text-danger"></span>
+                </div>
+                <hr />
+                <div class="form-group" id="form_group1">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" id="data_input"/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <hr />
+                <div class="form-group" id="form_group1">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" id="Password" class="form-control" />
+                    <span asp-validation-for="Password" id="PasswordInfo" class="text-danger"></span>
+                </div>
+                <hr />
+                <div class="form-group" id="form_group1">
+                    <label class="control-label">Confirm Password</label>
+                    <input name="Password1" id="Password1" class="form-control" />
+                </div>
+                <hr />
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn" onclick="return CheckPasswords1();" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function CheckPasswords1() {
+            let pass1 = $('#Password').val();
+            let pass2 = $('#Password1').val();
+            if (pass1 != pass2) {
+                $('#PasswordInfo').html("Password do not match!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</div>

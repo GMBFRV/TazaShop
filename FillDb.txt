@@ -1,0 +1,43 @@
+1. Delete Migrations folder
+2. Add-Migration
+3. Database inserts
+
+use tazashop
+
+insert into Kinds(Product, Sex, Elem) values ('Hoodie', 'N', 'Clothes')
+insert into Kinds(Product, Sex, Elem) values ('Trousers', 'N', 'Clothes')
+insert into Kinds(Product, Sex, Elem) values ('T-Shirt', 'N', 'Clothes')
+insert into Kinds(Product, Sex, Elem) values ('Dress', 'W', 'Clothes')
+insert into Kinds(Product, Sex, Elem) values ('Sneakers', 'N', 'Shoes')
+insert into Kinds(Product, Sex, Elem) values ('Boots', 'N', 'Shoes')
+insert into Kinds(Product, Sex, Elem) values ('High-Heeled', 'W', 'Shoes')
+insert into Kinds(Product, Sex, Elem) values ('Glasses', 'N', 'Accessories')
+insert into Kinds(Product, Sex, Elem) values ('Scarf', 'N', 'Accessories')
+insert into Kinds(Product, Sex, Elem) values ('Belt', 'N', 'Accessories')
+
+insert into Units(Name, Color, Collection, Price, Material, Sex, Description, KindId, Img) values ('CONVERSE CHUCK TAYLOR', 'White', 'Converse', 80 , 'Cotton','N','Smth here', 6 , '/img/Conv1.jpg')
+insert into Units(Name, Color, Collection, Price, Material, Sex, Description, KindId, Img) values ('ANDROMEDA', 'White', 'Ynel', 100 , 'Cotton','N','Smth here', 5 , '/img/1-31.webp')
+insert into Units(Name, Color, Collection, Price, Material, Sex, Description, KindId, Img) values ('SHINE', 'Orange', 'Ynel', 100 , 'Cotton','N','Smth here', 5 , '/img/2-1.webp')
+insert into Units(Name, Color, Collection, Price, Material, Sex, Description, KindId, Img) values ('FLAME', 'Black', 'Ynel', 100 , 'Cotton','N','Smth here', 5 , '/img/1-1.webp')
+
+insert into Images(UnitId, ImagePath) values (1, '/img/Conv1.jpg')
+insert into Images(UnitId, ImagePath) values (1, '/img/Conv2.jpg')
+insert into Images(UnitId, ImagePath) values (1, '/img/Conv4.jpg')
+insert into Images(UnitId, ImagePath) values (2, '/img/1-31.webp')
+insert into Images(UnitId, ImagePath) values (2, '/img/4-21.webp')
+insert into Images(UnitId, ImagePath) values (2, '/img/5-20.webp')
+insert into Images(UnitId, ImagePath) values (3, '/img/2-1.webp')
+insert into Images(UnitId, ImagePath) values (3, '/img/2-2.webp')
+insert into Images(UnitId, ImagePath) values (3, '/img/2-3.webp')
+insert into Images(UnitId, ImagePath) values (4, '/img/1-1.webp')
+insert into Images(UnitId, ImagePath) values (4, '/img/1-2.webp')
+insert into Images(UnitId, ImagePath) values (4, '/img/1-3.webp')
+
+insert into Sizes(UnitId, ProductSize, Qty) values (1, 40, 5)
+insert into Sizes(UnitId, ProductSize, Qty) values (1, 41, 5)
+insert into Sizes(UnitId, ProductSize, Qty) values (2, 40, 5)
+insert into Sizes(UnitId, ProductSize, Qty) values (2, 41, 5)
+insert into Sizes(UnitId, ProductSize, Qty) values (3, 40, 5)
+insert into Sizes(UnitId, ProductSize, Qty) values (3, 41, 5)
+insert into Sizes(UnitId, ProductSize, Qty) values (4, 40, 5)
+insert into Sizes(UnitId, ProductSize, Qty) values (4, 41, 5)
